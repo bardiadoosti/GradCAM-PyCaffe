@@ -76,7 +76,7 @@ cam = cv2.applyColorMap(np.uint8(255 * heatmap), cv2.COLORMAP_JET)
 new_image = cv2.imread(image_address)
 new_image = cv2.resize(new_image, image_size)
 
-cam = np.float32(cam) + np.float32(new_image)
+cam = 2*np.float32(cam) + np.float32(new_image)
 cam = 255 * cam / np.max(cam)
 cam = np.uint8(cam)
 
